@@ -105,7 +105,7 @@ function clearStatusClass(element) {
 
 const questions = [
   {
-    question: 'Who is the main evil in Harry Potter?',
+    question: 'Who is the evil in Harry Potter?',
     answers: [
       { text: 'Voldemort', correct: true },
       { text: 'Severus Snape', correct: false },
@@ -114,7 +114,7 @@ const questions = [
     ]
   },
   {
-    question: 'Who wrote Don Quixote?',
+    question: 'What happened with Don Quixote?',
     answers: [
       { text: 'Miguel de Cervantes', correct: true },
       { text: 'Mark Twain ', correct: false },
@@ -132,12 +132,12 @@ const questions = [
     ]
   },
   {
-    question: 'Who kills Hamlet?',
+    question: 'Because of what Hamlet died?',
     answers: [
-      { text: 'Voldemort', correct: false },
-      { text: 'Gulliver', correct: false },
-      { text: 'Wolverine', correct: false },
-      { text: 'Laertes', correct: true }
+      { text: 'Car accident', correct: false },
+      { text: 'Poison', correct: false },
+      { text: 'Rapier', correct: false },
+      { text: 'Poisoned rapier', correct: true }
     ]
   }
 ];
