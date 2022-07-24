@@ -34,8 +34,6 @@
     height: 360px;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background: url("../images/card.jpg") center center;
     background-size: cover;
@@ -52,9 +50,8 @@
   }
   
   .btn-grid {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
     margin: 20px 0;
   }
   
@@ -81,7 +78,7 @@
     --hue: var(--hue-wrong);
   }
   
-  .start-btn, .next-btn, .restart-btn{
+  .start-btn, .next-btn, .restart-btn, .finish-btn, .newgame-btn {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px 20px;
@@ -91,6 +88,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 0.8rem;
   }
   
   .hide {
@@ -99,7 +97,7 @@
 
   .question-container{
     width: 90vw;
-    height: 20vh;
+    height: 24vh;
     color: white;
     transition: all 0.3s ease;
     position: absolute;
@@ -110,3 +108,40 @@
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url(../images/card.jpg) center center;
     background-size: cover;
   }
+
+  .endContainer {
+    width: 90vw;
+    height: 24vh;
+    color: white;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url(../images/card.jpg) center center;
+    background-size: cover;
+  }
+
+  .Congrats{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .Congrats > h2{
+    letter-spacing: 1px;
+  }
+
+  .Congrats > p {
+    font-size: 2rem;
+  }
+
+  .newgame{
+    display: flex;
+    justify-content: center;
+  }
+  
+
+   

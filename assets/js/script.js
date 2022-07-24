@@ -1,14 +1,18 @@
 /* jshint esversion: 8 */
-const restartBtn = document.getElementById('restart-btn');
+const restartBtn = document.querySelector('.restart-btn');
 const startBtn = document.getElementById('start-btn');
 const nextBtn = document.getElementById('next-btn');
+const finishBtn = document.getElementById('.finish-btn');
 const questionContainer = document.querySelector('.question-container');
 const questionEl = document.getElementById('question');
 const answerBtnEl = document.getElementById('answer-buttons');
 const mainContainer = document.querySelector('.container');
+const endContainer = document.querySelector('.endContainer');
+const newgame = document.getElementById('newgame-btn')
 
 let mixQuestion, QuestionIndex;
 
+newgame.addEventListener('click',startGame)
 startBtn.addEventListener('click', startGame);
 restartBtn.addEventListener('click', startGame);
 nextBtn.addEventListener('click', () => {
@@ -19,6 +23,8 @@ nextBtn.addEventListener('click', () => {
 function startGame() {
   startBtn.classList.add('hide');
   mainContainer.classList.add('hide');
+  newgame.classList.add('hide')
+  endContainer.classList.add('hide');
   restartBtn.classList.add('hide');
   nextBtn.classList.remove('hide');
   mixQuestion = questions.sort(() => Math.random() - .5);
@@ -64,9 +70,12 @@ function selectAnswer(e) {
   if (mixQuestion.length > QuestionIndex + 2) {
     nextBtn.classList.remove('hide');
   } else {
-    restartBtn;
-    restartBtn.classList.remove('hide');
-  }
+    lastbtn();
+  } 
+}
+function lastbtn (){
+    endContainer.classList.remove('hide'); 
+    newgame.classList.remove('hide');
 }
 
 function setStatusClass(element, correct) {
