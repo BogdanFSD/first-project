@@ -1,4 +1,5 @@
 /* jshint esversion: 8 */
+const endBtn =document.getElementById('end-btn');
 const restartBtn = document.querySelector('.restart-btn');
 const startBtn = document.getElementById('start-btn');
 const nextBtn = document.getElementById('next-btn');
@@ -8,13 +9,15 @@ const questionEl = document.getElementById('question');
 const answerBtnEl = document.getElementById('answer-buttons');
 const mainContainer = document.querySelector('.container');
 const endContainer = document.querySelector('.endContainer');
-const newgame = document.getElementById('newgame-btn')
+const newgame = document.getElementById('newgame-btn');
+const Gamerules =document.getElementById('Gamerules');
+const playBtn = document.getElementById('btn-play');
 
 let mixQuestion, QuestionIndex;
-
-newgame.addEventListener('click',startGame)
-startBtn.addEventListener('click', startGame);
-restartBtn.addEventListener('click', startGame);
+endBtn.addEventListener('click',lastbtn);
+playBtn.addEventListener('click',startGame);
+newgame.addEventListener('click',gameRules);
+startBtn.addEventListener('click', gameRules);
 nextBtn.addEventListener('click', () => {
   QuestionIndex++;
   setNextQuestion();
@@ -25,12 +28,19 @@ function startGame() {
   mainContainer.classList.add('hide');
   newgame.classList.add('hide')
   endContainer.classList.add('hide');
-  restartBtn.classList.add('hide');
+  Gamerules.classList.add('hide');
   nextBtn.classList.remove('hide');
   mixQuestion = questions.sort(() => Math.random() - .5);
   QuestionIndex = 0;
   questionContainer.classList.remove('hide');
   setNextQuestion();
+}
+
+function gameRules (){
+  Gamerules.classList.remove('hide');
+  mainContainer.classList.add('hide');
+  endContainer.classList.add('hide');
+  endBtn.classList.add('hide'); 
 }
 
 function setNextQuestion() {
@@ -70,12 +80,13 @@ function selectAnswer(e) {
   if (mixQuestion.length > QuestionIndex + 2) {
     nextBtn.classList.remove('hide');
   } else {
-    lastbtn();
+    endBtn.classList.remove('hide');
   } 
 }
 function lastbtn (){
     endContainer.classList.remove('hide'); 
     newgame.classList.remove('hide');
+    questionContainer.classList.add('hide');
 }
 
 function setStatusClass(element, correct) {
@@ -94,39 +105,39 @@ function clearStatusClass(element) {
 
 const questions = [
   {
-    question: 'What is 2 + 2?',
+    question: 'Who is the main evil in Harry Potter?',
     answers: [
-      { text: '4', correct: true },
-      { text: '22', correct: false },
-      { text: '20', correct: false },
-      { text: '8', correct: false }
+      { text: 'Voldemort', correct: true },
+      { text: 'Severus Snape', correct: false },
+      { text: 'Dobby', correct: false },
+      { text: 'Gandalf', correct: false }
     ]
   },
   {
-    question: 'Who is the best YouTuber?',
+    question: 'Who wrote Don Quixote?',
     answers: [
-      { text: 'Web Dev Simplified', correct: true },
-      { text: 'Traversy Media', correct: true },
-      { text: 'Dev Ed', correct: true },
-      { text: 'Fun Fun Function', correct: true }
+      { text: 'Miguel de Cervantes', correct: true },
+      { text: 'Mark Twain ', correct: false },
+      { text: 'Cillian Murphy', correct: false },
+      { text: 'Sancho Panza', correct: false }
     ]
   },
   {
-    question: 'Is web development fun?',
+    question: 'What character is Queequeg ?',
     answers: [
-      { text: 'Kinda', correct: false },
-      { text: 'YES!!!', correct: true },
-      { text: 'Um no', correct: false },
-      { text: 'IDK', correct: false }
+      { text: 'Captain', correct: false },
+      { text: 'Cannibal ', correct: true },
+      { text: 'Moby Dick', correct: false },
+      { text: 'Pirat', correct: false }
     ]
   },
   {
-    question: 'What is 4 * 2?',
+    question: 'Who kills Hamlet?',
     answers: [
-      { text: '42', correct: false },
-      { text: '10', correct: false },
-      { text: '24', correct: false },
-      { text: '8', correct: true }
+      { text: 'Voldemort', correct: false },
+      { text: 'Gulliver', correct: false },
+      { text: 'Wolverine', correct: false },
+      { text: 'Laertes', correct: true }
     ]
   }
 ];

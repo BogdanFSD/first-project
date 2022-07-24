@@ -1,15 +1,12 @@
-*, *::before, *::after {
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap');
+
+*{
     box-sizing: border-box;
     font-family: Gotham Rounded;
   }
   
-  :root {
-    --hue-neutral: 200;
-    --hue-wrong: 0;
-    --hue-correct: 145;
-  }
   
-  body {
+body {
     height: 100vh;
     width: 100vw;
     background: url("../images/background.jpg") no-repeat center center;
@@ -18,14 +15,6 @@
     display: center;
     align-items: center;
     background-color: hsl(var(--hue), 100%, 20%);
-  }
-  
-  body.correct {
-    --hue: var(--hue-correct);
-  }
-  
-  body.wrong {
-    --hue: var(--hue-wrong);
   }
   
   .container {
@@ -49,41 +38,64 @@
     font-size: 2rem;
   }
   
-  .btn-grid {
+  .btn-flex {
     display: flex;
     flex-direction: column;
     margin: 20px 0;
   }
   
   .btn {
-    --hue: var(--hue-neutral);
+    
     border: 1px solid hsl(var(--hue), 100%, 30%);
-    background-color: hsl(var(--hue), 100%, 50%);
+    background-color: #565851;
     border-radius: 5px;
     padding: 5px 10px;
     color: white;
     outline: none;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content:center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 10px;
   }
   
   .btn:hover {
-    border-color: black;
+    background: grey;
   }
   
   .btn.correct {
-    --hue: var(--hue-correct);
-    color: black;
+    background-color: #0ca635;
+    
   }
   
   .btn.wrong {
-    --hue: var(--hue-wrong);
+    background-color: #562c2d;
   }
   
-  .start-btn, .next-btn, .restart-btn, .finish-btn, .newgame-btn {
+  .start-btn, .next-btn, .end-btn, .finish-btn, .newgame-btn, .btn-play {
     font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10px 20px;
+    font-weight: bolder;
+    text-decoration: none;
+    color: beige;
+    border: 0.25rem solid grey;
+    border-radius: 15px;
+    padding: 0 1rem;
   }
   
+  .btn-playy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+#newgame-btn{
+  position: relative;
+  top: 10em;
+}
+
   .controls {
     display: flex;
     justify-content: center;
@@ -94,10 +106,28 @@
   .hide {
     display: none;
   }
+  .rules-container > p{
+    display: flex;
+    justify-content:flex-start ;
+    font-size: 1.5rem;
+    margin-left: 0.5em;
+  }
+  .rules-container > h2{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 0.5em;
+  }
 
-  .question-container{
-    width: 90vw;
-    height: 24vh;
+  .gamerulesbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.8rem;
+  }
+
+.conntainer  {
+  width: 90vw;
+    height: 29vh;
     color: white;
     transition: all 0.3s ease;
     position: absolute;
@@ -107,41 +137,114 @@
     border-radius: 10px;
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url(../images/card.jpg) center center;
     background-size: cover;
+}
+
+  
+
+  #question{
+    text-align: center;
+    font-size: 2rem
   }
 
-  .endContainer {
-    width: 90vw;
-    height: 24vh;
-    color: white;
-    transition: all 0.3s ease;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url(../images/card.jpg) center center;
-    background-size: cover;
-  }
+  
 
   .Congrats{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
   }
   
-  .Congrats > h2{
+   h2{
     letter-spacing: 1px;
+    font-size: 2rem;
+    
+    
   }
 
-  .Congrats > p {
+   .Congrats > p {
     font-size: 2rem;
+    font-weight: bold;
+    
   }
 
   .newgame{
     display: flex;
     justify-content: center;
+    margin-top: 4em;
   }
   
 
-   
+  @media screen and (max-width:728px) {
+  .conntainer {
+    width: 90vw;
+      height: 48vh;
+      color: white;
+      transition: all 0.3s ease;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 10px;
+      background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url(../images/card.jpg) center center;
+      background-size: cover;
+  }
+}
+
+#main_footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  color: white;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#main_footer>div>a {
+  font-size: 160%;
+  margin: 1%;
+  padding: 5%;
+}
+
+#main_footer>div>a>i {
+  color: white;
+}
+
+
+
+@media screen and (max-width:1028px) {
+  .conntainer {
+    width: 90vw;
+      height: 39vh;
+      color: white;
+      transition: all 0.3s ease;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 10px;
+      background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url(../images/card.jpg) center center;
+      background-size: cover;
+  }
+}
+
+@media screen and (min-width:1029px){
+  .conntainer {
+    width: 90vw;
+      height: 39vh;
+      color: white;
+      transition: all 0.3s ease;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 10px;
+      background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url(../images/card.jpg) center center;
+      background-size: cover;
+  }
+}
+
