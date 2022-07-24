@@ -111,6 +111,7 @@ body {
     justify-content:flex-start ;
     font-size: 1.5rem;
     margin-left: 0.5em;
+    
   }
   .rules-container > h2{
     font-size: 2rem;
@@ -127,7 +128,7 @@ body {
 
 .conntainer  {
   width: 90vw;
-    height: 29vh;
+    height: 39vh;
     color: white;
     transition: all 0.3s ease;
     position: absolute;
@@ -199,13 +200,16 @@ body {
   }
   
 
-  
+  @media screen and (min-width:1440px){
+  .rules-container > p{
+    justify-content: center;
+  }
+}
 
-
-@media screen and (max-width:1028px) {
+@media screen and (max-width:1440px) {
   .conntainer {
-    width: 95%;
-      height: 55%;
+    width: 90vh;
+      height: 46vh;
       color: white;
       transition: all 0.3s ease;
       position: absolute;
@@ -216,23 +220,11 @@ body {
       background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url(../images/card.jpg) center center;
       background-size: cover;
   }
-}
-
-@media screen and (min-width:1029px){
-  .conntainer {
-    width: 90vw;
-      height: 51vh;
-      color: white;
-      transition: all 0.3s ease;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 10px;
-      background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)), url(../images/card.jpg) center center;
-      background-size: cover;
+ 
   }
-}
+
+
+
 
 @media screen and (max-width:1028px){
   .conntainer {
