@@ -1,9 +1,7 @@
 /* jshint esversion: 8 */
 const endBtn =document.getElementById('end-btn');
-const restartBtn = document.querySelector('.restart-btn');
 const startBtn = document.getElementById('start-btn');
 const nextBtn = document.getElementById('next-btn');
-const finishBtn = document.getElementById('.finish-btn');
 const questionContainer = document.querySelector('.question-container');
 const questionEl = document.getElementById('question');
 const answerBtnEl = document.getElementById('answer-buttons');
@@ -30,7 +28,7 @@ function startGame() {
   endContainer.classList.add('hide');
   Gamerules.classList.add('hide');
   nextBtn.classList.remove('hide');
-  mixQuestion = questions.sort(() => Math.random() - .5);
+  mixQuestion = questions.sort(() => Math.random() - 0.5);
   QuestionIndex = 0;
   questionContainer.classList.remove('hide');
   setNextQuestion();
@@ -139,5 +137,5 @@ const questions = [
       { text: 'Rapier', correct: false },
       { text: 'Poisoned rapier', correct: true }
     ]
-  }
+  },
 ];
